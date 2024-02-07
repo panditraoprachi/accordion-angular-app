@@ -1,0 +1,14 @@
+<div id="container">
+    <div class="custom">
+        <input [(ngModel)]="title" type="text" placeholder="Add title">
+        <textarea [(ngModel)]="content" placeholder="Add Content here"></textarea>
+        <button (click)="addItem()">Submit</button>
+    </div>
+    <div>
+        <div class="item" [ngClass]="{'active':i.active}" *ngFor="let i of items; let index=index ">
+            <div class="heading" (click)="clickCollaps(index)">{{i.title}}</div>
+            <div class="content">{{i.content}}</div>
+        </div>
+    </div>
+
+</div>
